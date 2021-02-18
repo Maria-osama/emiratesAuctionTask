@@ -1,0 +1,23 @@
+.label-section{
+    margin-top: 60px;
+}
+.label{
+    border: 1px solid #b7afaf;
+    padding: 15px;
+    color: green;
+    font-size: 20px;
+    background-color: beige;
+}
+nav .nav-link{
+    color: #fff !important;
+}
+nav select {
+    border: 1px solid;
+    background: transparent;
+    color: #fff;
+    margin-left: 20px;
+    padding: 5px 10px;
+}
+nav select option{
+    color: black !important;
+}

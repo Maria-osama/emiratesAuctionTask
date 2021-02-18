@@ -1,0 +1,24 @@
+
+
+- To run this App you need to run the following commands:
+    * npm install
+    * npm start
+
+---------------------------------------------------------------
+
+- logic steps:
+
+step 1- At the first time we load the application, the whole data is loaded from API and stored in local storage with Expiration time [ex: 20 second]
+
+step 2- each time we refresh the application or reload it , I check if:
+           * data is still found in localStorage , if yes : then check if it's not Expired (compare between Expiration time and the current time ).
+                                                   if not Expired, then use it.
+                                                   if Expired : then remove the key from localStorage and call the API again and repeate step 1.
+
+
+step 3- For the localization, I used Redux to store the current language of the application, to be shared between the whole pages,
+        and stored it in local storage as well to keep the choosen language in each time we load the application
+
+step 4- I used Axios for calling API.
+step 5- I used Routing for navigation between the pages.
+
