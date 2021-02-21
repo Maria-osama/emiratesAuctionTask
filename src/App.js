@@ -63,7 +63,8 @@ class App extends Component {
         }
         localStorage.setItem(key, JSON.stringify(item))
     }
-   getPhrasesFromAPI = () => {
+
+    getPhrasesFromAPI = () => {
 
         axios.get(API)
             .then(res => {
