@@ -12,6 +12,11 @@ class App extends Component {
         phrases: []
     }
     componentDidMount = () => {
+
+        //Set default language 
+        if (localStorage.getItem('appLanguage') == null) {
+            localStorage.setItem('appLanguage', 'ar');
+        }
         if (savedPhrases !== null) {
 
            this.getWithExpiry('phrases')
@@ -58,18 +63,13 @@ class App extends Component {
         }
         localStorage.setItem(key, JSON.stringify(item))
     }
-    getPhrasesFromAPI = () => {
+   getPhrasesFromAPI = () => {
 
         axios.get(API)
             .then(res => {
 
                 console.log('From API');
 
-                //Set default language 
-                if(!localStorage.getItem('appLanguage')){
-                    localStorage.setItem('appLanguage', 'en');
-                }
-                
                 //Save data in local storage with Expiration Time [ ex:20 second so I can test it]
                 this.setWithExpiry('phrases', res.data.Phrases, 20000)
 
