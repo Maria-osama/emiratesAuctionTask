@@ -1,7 +1,7 @@
 import * as actionTypes from './actions';
 
 const initialState = {
-    appCurrentLanguage: localStorage.getItem('appLanguage')
+   appCurrentLanguage: localStorage.getItem('appLanguage') ? localStorage.getItem('appLanguage') : 'ar'
 };
 
 const reducer = (state = initialState, action) => {
